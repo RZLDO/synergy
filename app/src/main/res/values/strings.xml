@@ -11,5 +11,7 @@
     <string name="round_up_tip">Round up tip?</string>
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount</string>
-    <string name="get_started">Let\'s Get Started</string>
+    <string name="get_started">Let\'s Explore Movie</string>
+    <string name="in_one_apps">in one apps</string>
+    <string name="explore_movie">Explore Movie</string>
 </resources>
