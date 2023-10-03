@@ -1,8 +1,8 @@
-package id.synergy.tipcount
+package id.synergy.chalenge3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import id.synergy.tipcount.databinding.ActivityMainBinding
+import id.synergy.chalenge3.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _binding : ActivityMainBinding
@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(_binding.root)
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, SplashScreen())
             .addToBackStack(null)
             .commit();
     }

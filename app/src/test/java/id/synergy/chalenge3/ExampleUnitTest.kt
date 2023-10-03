@@ -1,4 +1,4 @@
-package id.synergy.tipcount
+package id.synergy.chalenge3
 
 import org.junit.Test
 

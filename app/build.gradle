@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'id.synergy.tipcount'
+    namespace 'id.synergy.chalenge3'
     compileSdk 34
 
     defaultConfig {
-        applicationId "id.synergy.tipcount"
+        applicationId "id.synergy.chalenge3"
         minSdk 24
         targetSdk 34
         versionCode 1
