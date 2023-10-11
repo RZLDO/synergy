@@ -1,4 +1,4 @@
-package id.synergy.chalenge3
+package id.synergy.activitybase
 
 import org.junit.Test
 

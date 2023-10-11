@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tip count</string>
+    <string name="app_name">Netflix and chill</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo_image">logo image</string>
@@ -14,4 +14,8 @@
     <string name="get_started">Let\'s Explore Movie</string>
     <string name="in_one_apps">in one apps</string>
     <string name="explore_movie">Explore Movie</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="content">content</string>
 </resources>
