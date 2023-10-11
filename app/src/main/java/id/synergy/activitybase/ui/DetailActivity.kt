@@ -40,6 +40,8 @@ class DetailActivity : AppCompatActivity() {
             recyclerView.adapter = currentAdapter
         }
         val toolbar = _binding.toolbar
+        val color = R.color.white
+        toolbar.setTitleTextColor(getColor(color))
         toolbar.title = category
         setSupportActionBar(toolbar)
     }

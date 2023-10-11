@@ -23,7 +23,10 @@ class HomeActivity : AppCompatActivity() {
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(_binding.root)
         val toolbar = _binding.toolbar
+
         toolbar.title = "Category Movie"
+        val color = R.color.white
+        toolbar.setTitleTextColor(getColor(color))
         setSupportActionBar(toolbar)
 
         recyclerView = _binding.recyclerView
