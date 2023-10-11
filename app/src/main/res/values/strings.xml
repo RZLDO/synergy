@@ -18,4 +18,6 @@
     <string name="login">Login</string>
     <string name="password">password</string>
     <string name="content">content</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
 </resources>

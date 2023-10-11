@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import id.synergy.activitybase.data.SessionManager
 import id.synergy.activitybase.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -16,8 +17,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(_binding.root)
         _binding.btnLogin.isEnabled = false
         textWatcher()
+        val sessionManager = SessionManager(this)
         _binding.btnLogin.setOnClickListener {
             val intent = Intent(this,HomeActivity::class.java)
+            sessionManager.setLoginStatus(true)
             startActivity(intent)
             finish()
         }
