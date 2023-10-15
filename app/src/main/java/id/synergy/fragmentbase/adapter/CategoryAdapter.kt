@@ -1,14 +1,13 @@
-package id.synergy.activitybase.adapter
+package id.synergy.fragmentbase.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import id.synergy.activitybase.data.DataCategoryMovieModel
-import id.synergy.activitybase.data.MovieModel
-import id.synergy.activitybase.databinding.ItemCardViewBinding
+import id.synergy.fragmentbase.data.DataCategoryMovieModel
+import id.synergy.fragmentbase.databinding.ItemCardViewBinding
 
-class MovieAdapter(private val data: List<MovieModel>, private val itemClickListener: (MovieModel) -> Unit) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class CategoryAdapter(private val data: List<DataCategoryMovieModel>, private val itemClickListener: (DataCategoryMovieModel) -> Unit) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemCardViewBinding) : RecyclerView.ViewHolder(binding.root)
 

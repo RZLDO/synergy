@@ -1,32 +1,28 @@
-package id.synergy.activitybase.ui
+package id.synergy.fragmentbase.ui
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import id.synergy.activitybase.data.SessionManager
-import id.synergy.activitybase.databinding.ActivityLoginBinding
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import id.synergy.fragmentbase.R
+import id.synergy.fragmentbase.databinding.FragmentLoginBinding
+import id.synergy.fragmentbase.databinding.FragmentWelcomeBinding
 
-class LoginActivity : AppCompatActivity() {
-    private lateinit var _binding : ActivityLoginBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        _binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(_binding.root)
-        _binding.btnLogin.isEnabled = false
-        textWatcher()
-        val sessionManager = SessionManager(this)
-        _binding.btnLogin.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
-            sessionManager.setLoginStatus(true)
-            startActivity(intent)
-            finish()
-        }
+class LoginFragment : Fragment() {
+    private var binding : FragmentLoginBinding? = null
+    private val _binding get() = binding!!
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
+        return _binding.root
     }
     private fun textWatcher(){
-        _binding.edtEmail.addTextChangedListener(object  : TextWatcher{
+        _binding.edtEmail.addTextChangedListener(object  : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 

@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'id.synergy.activitybase'
+    namespace 'id.synergy.fragmentbase'
     compileSdk 34
 
     defaultConfig {
-        applicationId "id.synergy.activitybase"
+        applicationId "id.synergy.fragmentbase"
         minSdk 24
         targetSdk 34
         versionCode 1

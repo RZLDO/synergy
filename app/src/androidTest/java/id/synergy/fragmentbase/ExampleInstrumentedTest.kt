@@ -1,4 +1,4 @@
-package id.synergy.activitybase
+package id.synergy.fragmentbase
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

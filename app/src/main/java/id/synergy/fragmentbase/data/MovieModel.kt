@@ -1,8 +1,7 @@
-package id.synergy.activitybase.data
+package id.synergy.fragmentbase.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.io.Serializable
 
 data class DataCategoryMovieModel (
     val image : String,

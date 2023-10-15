@@ -1,4 +1,4 @@
-package id.synergy.activitybase
+package id.synergy.fragmentbase
 
 import org.junit.Test
 

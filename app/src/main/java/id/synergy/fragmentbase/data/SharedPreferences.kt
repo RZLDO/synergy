@@ -1,4 +1,4 @@
-package id.synergy.activitybase.data
+package id.synergy.fragmentbase.data
 
 import android.content.Context
 import android.content.SharedPreferences
