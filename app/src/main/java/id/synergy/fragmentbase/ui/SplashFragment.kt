@@ -26,9 +26,10 @@ class SplashFragment : Fragment() {
         val sessionManager = SessionManager(requireContext())
         Handler(Looper.getMainLooper()).postDelayed({
             if(sessionManager.getLoginStatus()){
-                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToWelcomeFragment())
-            }else{
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
+            }else{
+                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToWelcomeFragment())
+
             }
         },3000)
         return binding.root

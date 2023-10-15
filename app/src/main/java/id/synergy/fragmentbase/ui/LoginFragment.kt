@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import id.synergy.fragmentbase.R
+import id.synergy.fragmentbase.data.SessionManager
 import id.synergy.fragmentbase.databinding.FragmentLoginBinding
 import id.synergy.fragmentbase.databinding.FragmentWelcomeBinding
 
@@ -20,6 +22,17 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
         return _binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        textWatcher()
+        val sessionManager = SessionManager(requireContext())
+        _binding.btnLogin.isEnabled = false
+        _binding.btnLogin.setOnClickListener {
+            sessionManager.setLoginStatus(true)
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+        }
     }
     private fun textWatcher(){
         _binding.edtEmail.addTextChangedListener(object  : TextWatcher {

@@ -38,7 +38,17 @@
         android:id="@+id/detailFragment"
         android:name="id.synergy.fragmentbase.ui.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="data"
+            app:argType="id.synergy.fragmentbase.data.MovieModel[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="CategoryName"
+            app:argType="string"
+            android:defaultValue="name" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="id.synergy.fragmentbase.ui.HomeFragment"

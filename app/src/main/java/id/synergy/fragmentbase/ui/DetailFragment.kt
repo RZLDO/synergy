@@ -1,5 +1,8 @@
 package id.synergy.fragmentbase.ui
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +11,15 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.utils.widget.MockView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.synergy.fragmentbase.R
 import id.synergy.fragmentbase.adapter.CategoryAdapter
+import id.synergy.fragmentbase.adapter.MovieAdapter
+import id.synergy.fragmentbase.data.MovieModel
 import id.synergy.fragmentbase.data.categoryMovieList
 import id.synergy.fragmentbase.databinding.FragmentDetailBinding
 
@@ -28,50 +35,56 @@ class DetailFragment : Fragment() {
 
         _binding = FragmentDetailBinding.inflate(layoutInflater,container,false)
         val view = binding.root
-        val toolbar = binding.toolbar
-        toolbar.title = "Category Movie"
-        val color = R.color.white
-        toolbar.setTitleTextColor(requireContext().getColor(color))
-        setHasOptionsMenu(true)
-
+        val args = DetailFragmentArgs.fromBundle(requireArguments())
+        val movieModel: List<MovieModel>? = args.data?.toList()
+        val title  : String = args.categoryName
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        currentAdapter = CategoryAdapter(categoryMovieList) { items ->
-
+        if(movieModel != null){
+            currentAdapter = MovieAdapter(movieModel) { items ->
+                openUrl(items.title)
+            }
+            setupToolbar(title = title ,movieModel)
         }
+
         recyclerView.adapter = currentAdapter
 
         return view
     }
-    @Deprecated("Deprecated in Java")
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
+
+    @SuppressLint("QueryPermissionsNeeded")
+    fun openUrl(url : String){
+        val searchUrl = "https://www.google.com/search?q=${url}"
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(searchUrl)
+        startActivity(intent)
     }
-
-    @Deprecated("Deprecated in Java")
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.list -> {
-                recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                currentAdapter = CategoryAdapter(categoryMovieList) { items ->
-
+    private fun setupToolbar(title : String, movieData : List<MovieModel>){
+        val toolbar = binding.toolbar
+        toolbar.title = title
+        val color = R.color.white
+        toolbar.setTitleTextColor(requireContext().getColor(color))
+        toolbar.inflateMenu(R.menu.main_menu)
+        toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.list -> {
+                    recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    currentAdapter = MovieAdapter(movieData) { items ->
+                        openUrl(items.title)
+                    }
+                    recyclerView.adapter = currentAdapter
                 }
-                recyclerView.adapter = currentAdapter
-                return true
-            }
-            R.id.grid -> {
-                recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-                currentAdapter = CategoryAdapter(categoryMovieList) { items ->
-
+                R.id.grid -> {
+                    recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+                    currentAdapter = MovieAdapter(movieData) { items ->
+                        openUrl(items.title)
+                    }
+                    recyclerView.adapter = currentAdapter
                 }
-                recyclerView.adapter = currentAdapter
-                return true
             }
+            true
         }
-        return super.onOptionsItemSelected(item)
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
