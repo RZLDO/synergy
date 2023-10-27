@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.ui
+package id.synergy.NotesApps.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,8 +11,9 @@ import android.view.ViewGroup
 import androidx.core.os.postDelayed
 import androidx.navigation.fragment.findNavController
 import id.synergy.fragmentbase.R
-import id.synergy.fragmentbase.data.SessionManager
+import id.synergy.NotesApps.data.SessionManager
 import id.synergy.fragmentbase.databinding.FragmentSplashBinding
+import id.synergy.fragmentbase.ui.SplashFragmentDirections
 
 class SplashFragment : Fragment() {
     private var _binding : FragmentSplashBinding? = null

@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.data
+package id.synergy.NotesApps.data
 
 import android.content.Context
 import android.content.SharedPreferences

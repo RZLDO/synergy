@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.data
+package id.synergy.NotesApps.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

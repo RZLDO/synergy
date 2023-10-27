@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.ui
+package id.synergy.NotesApps.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import id.synergy.fragmentbase.R
 import id.synergy.fragmentbase.databinding.FragmentWelcomeBinding
+import id.synergy.fragmentbase.ui.WelcomeFragmentDirections
 
 class WelcomeFragment : Fragment() {
     private var _binding : FragmentWelcomeBinding? = null

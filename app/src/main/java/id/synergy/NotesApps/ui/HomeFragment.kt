@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.ui
+package id.synergy.NotesApps.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.synergy.fragmentbase.R
-import id.synergy.fragmentbase.adapter.CategoryAdapter
-import id.synergy.fragmentbase.data.MovieModel
-import id.synergy.fragmentbase.data.categoryMovieList
+import id.synergy.NotesApps.adapter.CategoryAdapter
+import id.synergy.NotesApps.data.MovieModel
+import id.synergy.NotesApps.data.categoryMovieList
 import id.synergy.fragmentbase.databinding.FragmentHomeBinding
+import id.synergy.fragmentbase.ui.HomeFragmentDirections
 
 class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -50,7 +51,8 @@ class HomeFragment : Fragment() {
                 R.id.list -> {
                     recyclerView.layoutManager = LinearLayoutManager(requireContext())
                     currentAdapter = CategoryAdapter(categoryMovieList) { items ->
-                        val toDetailFragment = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
+                        val toDetailFragment =
+                            HomeFragmentDirections.actionHomeFragmentToDetailFragment()
                         toDetailFragment.data = (items.listMovie.toTypedArray())
                         findNavController().navigate(toDetailFragment)
                     }
@@ -59,7 +61,8 @@ class HomeFragment : Fragment() {
                 R.id.grid -> {
                     recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
                     currentAdapter = CategoryAdapter(categoryMovieList) { items ->
-                        val toDetailFragment = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
+                        val toDetailFragment =
+                            HomeFragmentDirections.actionHomeFragmentToDetailFragment()
                         toDetailFragment.data = (items.listMovie.toTypedArray())
                         findNavController().navigate(toDetailFragment)
                     }

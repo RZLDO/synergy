@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.ui
+package id.synergy.NotesApps.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -17,11 +17,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.synergy.fragmentbase.R
-import id.synergy.fragmentbase.adapter.CategoryAdapter
-import id.synergy.fragmentbase.adapter.MovieAdapter
-import id.synergy.fragmentbase.data.MovieModel
-import id.synergy.fragmentbase.data.categoryMovieList
+import id.synergy.NotesApps.adapter.CategoryAdapter
+import id.synergy.NotesApps.adapter.MovieAdapter
+import id.synergy.NotesApps.data.MovieModel
+import id.synergy.NotesApps.data.categoryMovieList
 import id.synergy.fragmentbase.databinding.FragmentDetailBinding
+import id.synergy.fragmentbase.ui.DetailFragmentArgs
 
 class DetailFragment : Fragment() {
     private var _binding : FragmentDetailBinding? = null

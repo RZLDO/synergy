@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'id.synergy.fragmentbase'
+    namespace 'id.synergy.NotesApps'
     compileSdk 34
 
     defaultConfig {
-        applicationId "id.synergy.fragmentbase"
+        applicationId "id.synergy.NotesApps"
         minSdk 24
         targetSdk 34
         versionCode 1

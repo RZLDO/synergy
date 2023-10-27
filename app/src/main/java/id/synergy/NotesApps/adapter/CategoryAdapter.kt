@@ -1,10 +1,10 @@
-package id.synergy.fragmentbase.adapter
+package id.synergy.NotesApps.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import id.synergy.fragmentbase.data.DataCategoryMovieModel
+import id.synergy.NotesApps.data.DataCategoryMovieModel
 import id.synergy.fragmentbase.databinding.ItemCardViewBinding
 
 class CategoryAdapter(private val data: List<DataCategoryMovieModel>, private val itemClickListener: (DataCategoryMovieModel) -> Unit) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {

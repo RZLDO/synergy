@@ -1,4 +1,4 @@
-package id.synergy.fragmentbase.ui
+package id.synergy.NotesApps.ui
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,9 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import id.synergy.fragmentbase.R
-import id.synergy.fragmentbase.data.SessionManager
+import id.synergy.NotesApps.data.SessionManager
 import id.synergy.fragmentbase.databinding.FragmentLoginBinding
 import id.synergy.fragmentbase.databinding.FragmentWelcomeBinding
+import id.synergy.fragmentbase.ui.LoginFragmentDirections
 
 class LoginFragment : Fragment() {
     private var binding : FragmentLoginBinding? = null

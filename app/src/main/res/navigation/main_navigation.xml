@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="id.synergy.fragmentbase.ui.SplashFragment"
+        android:name="id.synergy.NotesApps.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="id.synergy.fragmentbase.ui.WelcomeFragment"
+        android:name="id.synergy.NotesApps.ui.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="id.synergy.fragmentbase.ui.LoginFragment"
+        android:name="id.synergy.NotesApps.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="id.synergy.fragmentbase.ui.DetailFragment"
+        android:name="id.synergy.NotesApps.ui.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="id.synergy.fragmentbase.ui.HomeFragment"
+        android:name="id.synergy.NotesApps.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
